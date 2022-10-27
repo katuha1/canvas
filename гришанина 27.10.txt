@@ -1,0 +1,255 @@
+1.1
+let str = 'ahb acb aeb aeeb adcb axeb'.replace(/a..b/g, "");
+console.log(str);
+
+1.2
+let str = 'aba aca aea abba adca abea'.match(/a..a/g);
+console.log(str);
+
+1.3
+let str = 'aba aca aea abba adca abea'.match(/ab.a/g, "");
+console.log(str);
+
+2.1
+let str = 'aa aba abba abbba abca abea'.match(/ab+a/g, '!');
+console.log(str);
+
+2.2
+let str = 'aa aba abba abbba abca abea'.match(/ab*a/g, '!');
+console.log(str);
+
+2.3
+let str = 'aa aba abba abbba abca abea'.match(/ab?a/g, '!');
+console.log(str);
+
+2.4
+let str = 'aa aba abba abbba abca abea'.match(/ab*a/g, '!');
+console.log(str);
+
+3.1
+let str = 'ab abab abab abababab abea'.match(/(ab)+/g, ' ');
+console.log(str);
+
+4.1
+let str = 'a.a aba aea'.match(/a\.a/g, '!');
+console.log(str);
+
+4.2
+let str = '2+3 223 2223'.match(/2\+3/g, '!');
+console.log(str);
+
+4.3
+let str = '23 2+3 2++3 2+++3 345 567'.match(/2\++3/g, '!');
+console.log(str);
+
+4.4
+let str = '23 2+3 2++3 2+++3 445 677'.match(/2\+*3/g, '!');
+console.log(str);
+
+4.5
+let str = '*+ *q+ *qq+ *qqq+ *qqq qqq+'.match(/\*q+\+/g, '!');
+console.log(str);
+
+4.6
+let str = '[abc] {abc} abc (abc) [abc]'.replace(/\[abc\]/g, '!');
+console.log(str);
+
+5.1
+let str = 'aa aba abba abbba abbbba abbbbba'.match(/ab{2,4}a/g, '!');
+console.log(str);
+
+5.2
+let str = 'aa aba abba abbba abbbba abbbbba'.match(/ab{0,3}a/g, '!');
+console.log(str);
+
+5.3
+let str = 'aa aba abba abbba abbbba abbbbba'.match(/ab{4,}a/g, '!');
+console.log(str);
+
+6.1
+let str = 'aba accca azzza wwwwa'.replace(/a.+?a/g, '!');
+console.log(str);
+
+7.1
+let str = 'a1a a2a a3a a4a a5a aba aca'.match(/a\da/g, '!');
+console.log(str);
+
+7.2
+let str = 'a1a a22a a333a a4444a a55555a aba aca'.match(/a\d+a/g, '!');
+console.log(str);
+
+7.3
+let str = 'aa a1a a22a a333a a4444a a55555a aba aca'.match(/a\d*a/g, '!');
+console.log(str);
+
+7.4
+let str = 'avb a1b a2b a3b a4b a5b abb acb'.match(/a\Db/g, '!');
+console.log(str);
+
+7.5
+let str = 'ave a#b a2b a$b a4b a5b a-b acb'.match(/a\Wb/g, '!');
+console.log(str);
+
+7.6
+let str = 'ave a#a a2a a$a a4a a5a a-a aca'.replace(/\s/g, '!');
+console.log(str);
+
+8.1
+let str = 'aba aea aca aza axa'.match(/a[b,e,x]a/g, '!');
+console.log(str);
+
+8.2
+let str = 'a1a a3a a7a a9a aba'.match(/a[3-6]a/g, '!');
+console.log(str);
+
+8.3
+let str = 'aba aea afa aha aga'.match(/a[a-g]a/g, '!');
+console.log(str);
+
+8.4
+let str = 'aba aea afa aha aga'.match(/a[a-f,j-z]a/g, '!');
+console.log(str);
+
+8.5
+let str = 'aAa aea aEa aJa a3a'.match(/a[a-f,A-D]a/g, '!');
+console.log(str);
+
+8.6
+let str = 'aAXa aeffa aGha aza ax23a a3sSa'.match(/a[a-z]+a/g, '!');
+console.log(str);
+
+8.7
+let str = 'aAXa aeffa aGha aza ax23a a3sSa'.match(/a[a-zA-Z]+a/g, '!');
+console.log(str);
+
+8.8
+let str = 'aAXa aeffa aGha aza ax23a a3sSa'.match(/a[a-z0-9]+a/g, '!');
+console.log(str);
+
+9.1
+let str=  '1e2, 1hd2, 1nf2, 1ex2, 1ubfc2'.match(/1[^e,x]+2/g, '!');
+console.log(str);
+
+9.2
+let str=  'x463z, x1yegz, x011z'.match(/x[^2-6]+z/g, '!');
+console.log(str);
+
+9.3
+let str=  'xTGFECDGz, xuybeufz, x011z'.match(/x[^A-Z]+?z/g, '!');
+console.log(str);
+
+9.4
+let str=  'x6z, xRDcz, x3468z'.match(/x[^A-Za-z, 1-5]+?z/g, '!');
+console.log(str);
+
+10.1
+let str=  'wйw wяw wёw wqw'.match(/w[А-Яа-яЁё]w/g, '!');
+console.log(str);
+
+10.2
+let str=  'ааа ббб ёёё ззз ййй ААА БББ ЁЁЁ ЗЗЗ ЙЙЙ'.match(/[А-Яа-яЁё]+/g, '!');
+console.log(str);
+
+11.1
+let str=  'aba aea aca aza axa a.a a+a a*a'.match(/a[.+*]a/g, '!');
+console.log(str);
+
+11.2
+let str= 'xaz x.z x3z x@z x$z xrz'.match(/x[^.@$]z/g, '!');
+console.log(str);
+
+12.1
+let str= 'xaz x1z x55z x.z x@z'.match(/x[\d|.]+z/g, '!');
+console.log(str);
+
+12.2
+let str= 'xaz x1z x55z x.z x@z'.match(/[^\da-gA-G]{3,5}/g, '!');
+console.log(str);
+
+13.1
+let str= 'x[]z x{}z x.z x()z'.match(/x[\[\]\{\}\(\)]+z/g, '!');
+console.log(str);
+
+13.2
+let str= '[abc] {abc} abc (abc) [abc]'.replace(/[^\[\]\{\}\(\)]+/g, '!');
+console.log(str);
+
+14.1
+let str= '^xx axx ^zz bkk @ss'.match(/[\^@][\w]{2}/g, '!');
+console.log(str);
+
+14.2
+let str= '^xx axx ^zz bkk @ss'.match(/[^\^@][\w]{2}/g, '!');
+console.log(str);
+
+14.3
+let str= '^xx axx ^zz bkk'.match(/[^\^][\w]{2}/g, '!');
+console.log(str);
+
+15.1
+let str= 'xaz xBz xcz x-z x@z'.match(/x[A-Za-z-]z/g, '!');
+console.log(str);
+
+15.2
+let str= 'xaz x$z x-z xcz x+z x%z x*z'.match(/x[$+-]z/g, '!');
+console.log(str);
+
+16.1
+let str= 'abc def xyz'.match(/^[\w]+/g, '!');
+console.log(str);
+
+16.2
+let str= 'abc def xyz'.match(/[\w]+$/g, '!');
+console.log(str);
+
+17.1
+let str= 'aeeea aeea aea axa axxa axxxa'.match(/ae+a|ax+a/g, '!');
+console.log(str);
+
+17.2
+let str= 'aeeea aeea aea axa axxa axxxa'.match(/ae{2}a|ax*a/g, '!');
+console.log(str);
+
+18.1
+let a= /http:/.test('https://code.mu/ru/javascript/book/supreme/regular/method-test/');
+console.log(a)
+
+18.2
+let a= /^https?/.test('https://code.mu/ru/javascript/book/supreme/regular/method-test/');
+console.log(a)
+
+18.3
+let a= /txt|html|php$/.test('oigjoei.txt');
+console.log(a)
+
+18.4
+let a= /jpg|jpeg$/.test('oigjoei.jpg');
+console.log(a)
+
+18.5
+let a= /jpg|jpeg|png$/.test('oigjoei.jpg');
+console.log(a)
+
+18.6
+let a= /^\d{1,12}$/.test('7285676253');
+console.log(a)
+
+18.7
+let a= (/(19|20)\d\d-((0[1-9]|1[012])-(0[1-9]|[12]\d)|(0[13-9]|1[012])-30|(0[13578]|1[02])-31))/.test('2045-12-08'));
+console.log(a)
+
+18.8
+let a= (/30|(0[13578]|1[02])|31.(0[1-9]|[12]\d)|(0[13-9]|1[012]).(19|20)\d\d-((0[1-9]|1[012]))/.test('24.03.5267'));
+console.log(a)
+
+18.9
+let a= (/([0-1]\d|2[0-3])(:[0-5]\d){2}$/.test('17:34:56'));
+console.log(a)
+
+18.10
+let a= (/^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/.test('weuyfguv.ru'));
+console.log(a)
+
+18.11
+let a= (/^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/.test('code.mu'));
+console.log(a)
